@@ -1,0 +1,466 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author)
+% http://mboedick.org (c) 2003-2007 David J. Grant
+% <davidgrant-at-gmail.com> http://www.davidgrant.ca (c) 2008-2015
+% Nathaniel Johnston <nathaniel@njohnston.ca> http://www.njohnston.ca
+% This work is licensed under the Creative Commons
+% Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of
+% this license, visit
+% http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter
+% to Creative Commons, 543 Howard Street, 5th Floor, San Francisco,
+% California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{hyperref}
+
+% The following two lines are needed to fix a MacTex compatibility issue
+% Thanks to Tony Blake for finding this fix!
+\usepackage{etoolbox}
+\robustify\cftdotfill
+
+%-----------------------------------------------------------
+% Edit these values as you see fit
+
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+% Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolor}{gray}{0.75}  
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+\urlstyle{rm}
+
+%-----------------------------------------------------------
+% Margin setup
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+%-----------------------------------------------------------
+% Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{8pt}
+  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+    \begin{shaded}
+      \setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-5pt}
+}
+\newcommand{\ressubheading}[4]{
+  \begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+	\textbf{#1} & #2 \\
+	\textit{#3} & \textit{#4} \\
+  \end{tabular*}\vspace{-6pt}}
+\newcommand{\olressubheading}[2]{
+  \begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+	\textbf{#1} & #2 \\
+  \end{tabular*}}%\vspace{6pt}}
+\newcommand{\leftsubheading}[1]{
+  \textbf{#1\vspace{-6pt} \\}}
+
+%-----------------------------------------------------------
+
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Gregory Davidson} & \textbf{\today} \\
+  Senior Research and Development Staff &
+  (865) 574-3921 \\
+  Reactor and Nuclear Systems Division &
+  \href{mailto:davidsongg@ornl.gov}{davidsongg@ornl.gov} \\
+  Oak Ridge National Laboratory &
+  \url{https://www.ornl.gov/staff-profile/gregory-g-davidson} \\  
+  1 Bethel Valley Rd. & \\
+  Oak Ridge, TN  37831 & \\
+\end{tabular*}
+\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Research interests}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{center}
+    \parbox{6.762in}{My research interests include deterministic
+      transport algorithms, such as finite element SN discretizations
+      and time differencing methods, Monte Carlo transport,
+      sensitivity/uncertainty analysis, discrete diffusion Monte Carlo
+      methods, multiphysics methods, transport-depletion coupling
+      methods, hydrodynamics, software engineering, object-oriented
+      programming, programming for massively-parallel systems,
+      especially leadership-class computing, and programming for
+      heterogeneous architectures.}
+  \end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item
+  \ressubheading{University of Michigan}{Ann Arbor,
+    MI}{Ph.D. Nuclear Engineering and Radiological Sciences and
+    Scientific Computing}{2004 - 2009}
+  \begin{itemize}
+	\resitem{Dissertation: Time-Dependent Radiation Transport
+      using the Staggered-Block Jacobi Method}
+	\resitem{GPA: 8.15/9.00}
+  \end{itemize}
+
+\item
+  \ressubheading{Oregon State University}{Corvallis, OR}{M.S. Nuclear
+    Engineering}{2002 - 2004}
+	\begin{itemize}
+	  \resitem{Thesis: Finite Element Transport using Wachspress
+        Rational Basis Functions on Quadrilaterals in Diffusive Regions}
+		\resitem{GPA: 3.93 / 4.00}
+	\end{itemize}
+
+\item
+  \ressubheading{Oregon State University}{Corvallis, OR}{Honor's
+    B.S. Nuclear Engineering}{1998 - 2002}
+	\begin{itemize}
+	  \resitem{Undergraduate Thesis: Finite Element Diffusion
+        Solutions on Arbitrary Quadrilaterals using Wachspress
+        Rational Functions}
+		\resitem{GPA: 3.94 / 4.00}
+	\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Work Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item
+  \olressubheading{Oak Ridge National Laboratory}{2009 - Present}
+  Research and development associate as part of the Shift/Denovo team,
+  investigating advanced, massively parallel radiation transport
+  solutions, including both fixed-source and k-eigenvalue problems, as
+  well as transport-depletion coupling schemes.  Also part of the
+  development team of CASL as a member of the VERA-RTM area.  Have
+  worked extensively in multicode coupling, including coupling to the
+  XSProc package in Scale for automated cross-section generation,
+  coupling to ORIGEN for depletion calculations, and to the AMP
+  (Advanced MultiPhysics) fuel performance code.
+
+\item
+  \olressubheading{Los Alamos National Laboratory}{Summer 2005}
+  Implemented an emissivity-preserving discrete diffusion Monte Carlo
+  (DDMC) transport scheme in C++.  Wrote and tested the
+  asymptotically-correct angular distribution functionality for
+  transport-diffusion interfaces in DDMC methods.
+
+\item
+  \olressubheading{Bettis Atomic Power Laboratory}{Summer 2003}
+  Derived the equations for the constant-constant, constant-linear,
+  and linear-linear short characteristics methods on rectangular
+  zones.  Wrote the constant-linear characteristics method into an
+  existing SN code in Fortran 90.
+
+\item
+  \olressubheading{Lawrence Livermore National Laboratory}{Summer
+    2002}
+  Researched a finite-element transport method using Wachspress
+  rational basis functions for solving the  discrete-ordinates neutron
+  transport equation. 
+
+\item
+  \olressubheading{Lawrence Livermore National Laboratory}{Summer
+    2001}
+  Investigated a one-dimensional computational hydrodynamics scheme
+  based on rational basis functions.
+
+\item
+  \olressubheading{Lawrence Livermore National Laboratory}{Summer
+    2000}
+  Implemented relativistic fluid motion corrections and momentum
+  deposition into the particle Monte Carlo package of Kull, a
+  three-dimensional multiphysics code, in C++ and Python. 
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Honors and Awards}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item R\&D100 Award for the Virtual Environment for Reactor
+  Applications (VERA) reactor simulator code.
+\item 2014 ORNL Engineering Research and Development team award
+\item Principle Investigator of the ORNL LDRD, "Advanced Modeling \&
+  Simulation to Support High Performance Research Reactor Conversions
+  to Low Enriched Uranium"
+\item Principle Investigator of the ASCR Leadership Computing
+  Challenge, "Advanced Simulation of HFIR for LEU Conversion"
+\item Awarded the HPC Innovation Excellence Award
+\item 2012 Oak Ridge National Laboratory Significant Event Award
+\item 2011 MeV Summer School: Best Technical Paper Award
+\item American Nuclear Society, Mathematics and Computation
+  Division, Best Paper and Presentation Award, November 2010
+\item 2010 ORNL Engineering Research and Development team award
+\item D.O.E. Computational Science Graduate Fellowship Award
+\item Master's Thesis of the Year, Nuclear Engineering
+  Department, Oregon State University
+\item Honor's College Member at Oregon State University
+\item Tau Beta Pi Engineering Honor Society
+\item Phi Kappa Phi Honor Society
+\item Alpha Lambda Delta Honorary Fraternity
+\item National Academy for Nuclear Training Scholarship
+\item Oregon Space Grant Scholarship
+\item D.O.E. NEHP Scholarship
+\item OSU Achievement Scholarship
+\item Schuette Engineering Scholarship
+\item Leo Adler Foundation Scholarship
+\item Sanford Adler Scholarship
+\item Nadie Strayer Scholarship
+\item Grant-Baker Federal Credit Union Scholarship
+\item Elks Scholarship
+\end{itemize}  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Publications}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftsubheading{Journal Publications}
+\begin{enumerate}
+  \item Cihangir Celik, Douglas E. Peplow, Gregory G. Davidson, and
+    Mathew R. Swinney, ``A Directional Detector Response Function for
+    Anisotropic Detectors,'' Nucl. Sci. Eng. (in review).
+  \item Douglas E. Peplow, Kaushik Banerjee, Gregory G. Davidson, Ian
+    R. Stewart, Mathew W. Swinney, and Jackson N. Wagner, ``Preliminary
+    Validation of the Shift Monte Carlo Code for Fixed-Source
+    Radiation Transport Problems,'' Nucl. Tech. (in review).
+  \item Gregory G. Davidson, Tara M. Pandya, Seth R. Johnson, Thomas
+    M. Evans, Aarno E. Isotalo, Cole A Gentry, and William
+    A. Wieselquist, ``Nuclide depletion capabilities in the Shift Monte
+    Carlo code,'' Ann. Nucl. Energy, 114, 259-276 (2018).
+  \item Lei Jin, Kaushik Banerjee, Steven P. Hamilton, and Gregory
+    G. Davidson, ``Improving Variance Estimation in Monte Carlo
+    Eigenvalue Simulations,'' Ann. Nucl. Energy, 110, 692-708 (2017).
+  \item A.D. Nicholson, I. Garishvili, D.E. Peplow, D.E. Archer,
+    W.R. Ray, M.W. Swinnery, M.J. Willis, G.G. Davidson,
+    S.L. Cleveland, B.W. Patton, D.E. Hornback, J.J. Peltz,
+    M.S.L. McLean, A.A. Plionis, B.J. Quiter, and M.S. Bandstra,
+    ``Multiagency Urban Seach Experiment Detector and Algorithm Test
+    Bed,'' IEEE Trans. Nucl. Sci., 64, 7, 1689-1695 (2017).
+  \item A.E. Isotalo, G.G. Davidson, T.M. Pandya, W.A. Wieselquist,
+    and S.R. Johnson, ``Flux Renormalization in Constant Power Burnup
+    Calculations,'' Ann. Nucl. Energy, 96, 148-157 (2016).
+  \item S.P. Hamilton, T.M. Evans, G.G. Davidson, S.R. Johnson,
+    T.M. Pandya, and A.T. Godfrey, ``Hot Zero Power Reactor
+    Calculations Using the Insilico Code,'' J. Comp. Phys., 314,
+    700-711 (2016).
+  \item T.M. Pandya, S.R. Johnson, T.M. Evans, G.G. Davidson,
+    S.P. Hamilton, and A.T. Godfrey, ``Capabilities, Implementation,
+    and Benchmarking of Shift, a Massively Parallel Monte Carlo
+    Radiation Transport Code,'' J. Comp. Phys., 308, 239-272 (2016).
+  \item R.N. Slaybaugh, T.M. Evans, G.G. Davidson, and P.P.H. Wilson,
+    ``Multigrid in Energy Preconditioner for Krylov Solvers,''
+    J. Comp. Phys., 272, 405-419 (2013).
+  \item G.G. Davidson, T.M. Evans, J.J. Jarrell, S.P. Hamilton,
+    T.M. Pandya, and R.N. Slaybaugh, ``Massively Parallel,
+    Three-Dimensional Transport Solutions for the k-Eigenvalue
+    Problem,'' Nucl. Sci. Eng. 177, 111-125 (2014).
+  \item J.J. Jarrell, A.T. Godfrey, T.M. Evans, and G.G. Davidson,
+    ``Full Core Reactor Analysis: Running Denovo on Jaguar,''
+    Nucl. Sci. Eng., 175, 283-291 (2013).
+  \item G. Yesilyurt, K.T. Clarno, T.M. Evans, G.G. Davidson, and
+    P.B. Fox, ``C5 Benchmark Problem with Discrete Ordinate Radiation
+    Transport Code Denovo,'' Nucl. Tech. 176(2), 274-283 (2011).
+  \item G. Davidson and T.S. Palmer, ``Finite Element Transport Using
+    Wachspress Rational Functions on Quadrilaterals in Thick Diffusive
+    Regions,'' Nucl. Sci. Eng., 159, 242 (2008). 
+  \item J.D. Densmore, G. Davidson, and D.B. Carrington, ``Emmissivity
+    of Discretized Diffusion Problems,'' Ann. Nucl. Energy, 33, (2006).
+\end{enumerate}
+
+\leftsubheading{Conference Proceedings}
+\begin{enumerate}
+  \item Peplow, D.E., Swinney, Mathew W., Davidson, Gregory G.,
+    Nicholson, Andrew D., and Patton, Bruce W., ``Initial Modeling of
+    Urban Search Measurements,'' American Nuclear Society Annual
+    Meeting, June 11 – 15, Chicago, IL (2017).
+  \item Gentry, C., Godfrey, A., Pandya, T., Davidson, G., and
+    Franceschini, F., ``AP1000 Benchmarking of VERA Neutronics
+    Toolset,'' M\&C 2017 – International Conference on Mathematics and
+    Computational Methods Applied to Nuclear Science and Engineering,
+    Jeju, Korea, April 16-20 (2017).
+  \item G.G. Davidson, T.M. Pandya, A.E. Isotalo, S.R. Johnson,
+    T.M. Evans, and W.A. Wieselquist, ``Nuclide Depletion Capabilities
+    in the Shift Monte Carlo Code,'' PHYSOR 2016, May 1-5, Sun Valley,
+    ID.
+  \item T.M. Pandya, S.R. Johnson, G.G. Davidson, T.M. Evans, and
+    S.P. Hamilton, ``Shift: A Massively Parallel Monte Carlo Radiation
+    Transport Package,'' M\&C 2015, April 19-23, Nashville, TN.
+  \item T.M. Evans, W. Joubert, S.P. Hamilton, S.R. Johnson,
+    J.A. Turner, G.G. Davidson, and T.M. Pandya, ``Three-Dimensional
+    Discrete Ordinates Reactor Assembly Calculations on GPUs,'' M\&C
+    2015, April 19-23, Nashville, TN.
+  \item R.N. Slaybaugh, T.M. Evans, G.G. Davidson, and P.P.H. Wilson,
+    ``Rayleigh Quotient Iteration with a Multigrid in Energy
+    Preconditioner for Massively Parallel Neutron Transport,'' M\&C
+    2015, April 19-23, Nashville, TN.
+  \item S. Palmtag, K. Clarno, G. Davidson, et. al., ''Coupled
+    Neutronics and Thermal-Hydraulic Solution of a Full-Core PWR Using
+    VERA-CS,'' PHYSOR 2014, Kyoto, Japan.
+  \item J.J. Jarrell, T.M. Evans, and G.G. Davidson, ''Discrete
+    Ordinate Quadrature Selection for Reactor-based Eigenvalue
+    Problems,'' M\&C 2013, Sun Valley, ID May 5-9, 2013.
+  \item S. Hamilton, K. Clarno, M. Berrill, T. Evans, G. Davidson,
+    R. Lefebvre, and R. Sampath, ''Multiphysics Simulations for LWR
+    Analysis,'' M\&C 2013, Sun Valley, ID, May 5-9, 2013.
+  \item C.G. Baker, G.G. Davidson, T.M. Evans, S.P. Hamilton,
+    J.J. Jarrell, and W. Joubert, ''High Performance Radiation
+    Transport Simulations on TITAN,'' Supercomputing SC12, Salt Lake
+    City, NV, Nov. 12-15, 2012.
+  \item J.J. Jarrell, A.T. Godfrey, T.M. Evans, and G.G. Davidson,
+    ''Full Core Reactor Analysis: Running Denovo on Titan,'' PHYSOR
+    2012, Knoxville, TN, April 15-20. On CD-ROM, American Nuclear
+    Society, LaGrange Park, IL, 2012.
+  \item R.N. Slaybaugh, T.M. Evans, G.G. Davidson, and P.P.H. Wilson,
+    ''Rayleigh Quotient Iteration in 3D, Deterministic Neutron
+    Transport,'' PHYSOR 2012, Knoxville TN, April 15-20.  On CD-ROM,
+    American Nuclear Society, LaGrange, Park, IL, 2012.
+  \item B. Vacaliuc, D.R. Patlolla, E. D'Avezado, G.G. Davidson,
+    et. al., ''Python for Development of OpenMP and CUDA Kernals for
+    Multidimensional Data,'' 2011 Symposium on Application Accelerators
+    in High Performance Computing (SAAHPC'11), Knoxville, TN, July
+    19-21, 2011.
+  \item T.M. Evans, G.G. Davidson, and R.N. Slaybaugh,
+    ''Three-Dimensional Full Core Power Calculations for Pressurized
+    Water Reactors,'' Proceedings of the 2010 Scientific Discovery
+    through Advanced Computing (SciDAC) Conference. Chattanooga,
+    Tennessee, July 11-15, 2010. Oak Ridge National
+    Laboratory. http://computing.ornl.gov/workshops/scidac2010/.
+  \item G. Davidson and E.W. Larsen, ''Sweepless Time-Dependent
+    Transport Calculations using the Staggered Block Jacobi Method,''
+    International Conference on Mathematics, Computational Methods,
+    and Reactor Physics (M\&C 2009), Saratoga Springs, NY, May 3-7.  On
+    CD-ROM, American Nuclear Society, LaGrange Park, IL, 2009.
+  \item G. Davidson and T.S. Palmer, ``Finite Element Transport Using
+    Wachspress Rational Basis Functions on Quadrilaterals in Diffusive
+    Regions,'' Palais des Papes, Avignon, France, September 12-15.  On
+    CD-ROM, American Nuclear Society, LaGrange Park, IL, 2005.
+\end{enumerate}
+
+\leftsubheading{Conference Abstracts}
+\begin{enumerate}
+  \item S.P. Hamilton, G.G. Davidson, T.M. Evans, and K. Banerjee,
+    "Accelerated Monte Carlo Fission Source Convergence with Fission
+    Matrix and Kernel Density Estimators," American Nuclear Society
+    Annual Summer Meeting, June 12-16, New Orleans, LA (2016).
+  \item B. Vacaliuc, J.K. Munro, Jr., Z.W. Bell, T.M. Evans, and
+    G.G. Davidson, "Accelerated Solution of One-Dimensional Neutron
+    Transport on General Purpose Graphics Processing Unit,"
+    International Conference on Preconditioning Techniques for
+    Scientific and Industrial Applications," May 16-18, Bordeaux,
+    France, 2011.
+  \item G.G. Davidson, T.M. Evans, R.N. Slaybaugh, and C.G. Baker,
+    "Massively Parallel Solutions to the k-Eigenvalue Problem,"
+    Trans. Am. Nucl. Soc., 103 (2010).
+  \item G. Davidson and E.W. Larsen, "An Unconditionally-Stable
+    Time-Dependent Transport Method Without Sweeps,"
+    Trans. Am. Nucl. Soc., 97 (2007).
+  \item G. Davidson, J.D. Densmore, A.K. Prinja, and J.E. Morel,
+    "Asymptotically Correct Angular Distributions for Monte
+    Carlo-Diffusion Interfaces," Trans. Am. Nucl. Soc., 94 (2006).
+  \item G.G. Davidson and T.S. Palmer, "Finite Element Diffusion on
+    Arbitrary Quadrilaterals using Rational Basis Functions,"
+    Trans. Am. Nucl. Soc., 87 (2002).
+\end{enumerate}
+
+\leftsubheading{Theses}
+\begin{enumerate}
+  \item G. Davidson, "Time-Dependent Radiation Transport Using the
+    Staggered-Block Jacobi Method," Doctoral Dissertation, Department
+    of Nuclear Engineering and Radiolocal Sciences, University of
+    Michigan (2010).
+  \item G. Davidson, "Finite Element Transport Using Wachspress
+    Rational Basis Functions on Quadrilaterals in Diffusive Regions,"
+    Master's Thesis, Department of Nuclear Engineering and Radiation
+    Health Physics, Oregon State University (2004).
+  \item G. Davidson, "Finite Element Diffusion Solutions on Arbitrary
+    Quadrilaterals using Rational Basis Functions," Undergraduate
+    Honor's Thesis, Department of Nuclear Engineering and Radiation
+    Health Physics, Oregon State University (2002).
+\end{enumerate}
+
+\leftsubheading{Contributed Presentations}
+\begin{enumerate}
+  \item G.G. Davidson, T.M. Evans, R.N. Slaybaugh, and C.G. Baker,
+    "Massively Parallel Solutions to the k-Eigenvalue Problem,"
+    American Nuclear Society, Annual Meeting, November 7-11, 2010, Las
+    Vegas, N.V.
+  \item G. Davidson and E.W. Larsen, "An Unconditionally-Stable
+    Finite-Element Transport Method Without Sweeps," American Nuclear
+    Society, Annual Meeting, November 11-15, 2007, Washington, D.C.
+  \item G. Davidson and T.S. Palmer, "Finite-Element Particle
+    Transport using Wachspress Rational Basis Functions,"
+    Computational Science Graduate Fellowship, Annual Conference, June
+    20-22, 2006, Washington, D.C., available at
+    http://www.cs-pi.org/csgf/conf/2006/presentations/davidson.shtml.
+  \item G. Davidson, J.D. Densmore, A.K. Prinja, and J.E. Morel,
+    "Asymptotically Correct Angular Distributions for Monte
+    Carlo-Diffusion Interfaces," American Nuclear Socity, Annual
+    Meeting, June 4-8, 2006, Reno, NV.
+  \item G. Davidson and T.S. Palmer, "Finite Element Transport Using
+    Wachspress Rational Basis Functions on Quadrilaterals in Diffusive
+    Regions," Palais des Papes, Avignon, France, September 12-15,
+    2005.
+  \item G.G. Davidson and T.S. Palmer, "Finite Element Diffusion on
+    Arbitrary Quadrilaterals using Rational Basis Functions," American
+    Nuclear Society, Annual Meeting, November 17-21, 2002, Washington,
+    D.C.
+\end{enumerate}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Professional Activities}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item Member of the American Nuclear Society, 1998-Present
+  \begin{itemize}
+    \item Local American Nuclear Society Executive Committee 2016 - Present
+    \item Mathematics and Computations Division Executive Committee, 2011-2014
+    \item Co-chair of the Mathematics and Computations Division
+      Publicity Committee. 
+	\item Vice President of the Student Chapter at Oregon State
+      University, 1999-2000.
+  \end{itemize}
+\item Attended the 2011 MeV Summer School: Reactor Physics,
+  Computations, Validation, and Integration in Multiphysics Codes 
+\item Attended the 2008 Accerators for Science and Engineering
+  Applications: GPUs and Multicores summer school 
+\item Member of the American Nuclear Society, 1998-Present
+\item Graduate Senator of the Associated Students of Oregon State
+  University, 2004-2006.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Skills}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item Programming Languages: C++, C , Python, Fortran 90
+\item Code Libraries: C++ Standard Template Libraries, BOOST,
+  Trilinos, Silo, HDF5 
+\item Version Control Software: CVS, Subversion, Git, Mercurial
+\item Documentation: LaTex, Doxygen, reStructuredText, Wiki markup
+\item Analysis Software: Mathematica, Matlab, Maple
+\item Scientific Software: AMP, MCNP, Scale, Attila, VESTA, Serpent
+\item Office Software: MS Office, OpenOffice
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
