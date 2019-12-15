@@ -3,6 +3,7 @@ cv.1-2.log
 cv.aux
 cv.aux.make
 cv.auxbbl.make
+cv.auxbbl.make.temp
 cv.auxtarget.make
 cv.d
 cv.fls
