@@ -1,0 +1,220 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author)
+% http://mboedick.org (c) 2003-2007 David J. Grant
+% <davidgrant-at-gmail.com> http://www.davidgrant.ca (c) 2008-2015
+% Nathaniel Johnston <nathaniel@njohnston.ca> http://www.njohnston.ca
+% This work is licensed under the Creative Commons
+% Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of
+% this license, visit
+% http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter
+% to Creative Commons, 543 Howard Street, 5th Floor, San Francisco,
+% California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{hyperref}
+
+% The following two lines are needed to fix a MacTex compatibility issue
+% Thanks to Tony Blake for finding this fix!
+\usepackage{etoolbox}
+\robustify\cftdotfill
+
+%-----------------------------------------------------------
+% Edit these values as you see fit
+
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+% Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolor}{gray}{0.75}  
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+\urlstyle{rm}
+
+%-----------------------------------------------------------
+% Margin setup
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+%-----------------------------------------------------------
+% Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{8pt}
+  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+    \begin{shaded}
+      \setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-5pt}
+}
+\newcommand{\ressubheading}[4]{
+  \begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+	\textbf{#1} & #2 \\
+	\textit{#3} & \textit{#4} \\
+  \end{tabular*}\vspace{-6pt}}
+\newcommand{\olressubheading}[2]{
+  \begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+	\textbf{#1} & #2 \\
+  \end{tabular*}}%\vspace{6pt}}
+\newcommand{\leftsubheading}[1]{
+  \textbf{#1}\vspace{-6pt} \\}
+
+%-----------------------------------------------------------
+
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Gregory Davidson} & \textbf{\today} \\
+  Senior Research and Development Staff &
+  (865) 574-3921 \\
+  Reactor and Nuclear Systems Division &
+  \href{mailto:davidsongg@ornl.gov}{davidsongg@ornl.gov} \\
+  Oak Ridge National Laboratory &
+  \url{https://www.ornl.gov/staff-profile/gregory-g-davidson} \\  
+  1 Bethel Valley Rd. & \\
+  Oak Ridge, TN  37831 & \\
+\end{tabular*}
+\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Research interests}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+My research interests including computational physics algorithms for
+high performance modeling and simulations applied to nuclear
+applications, including deterministic neutral particle transport algorithms, such as finite element $S_N$ discretizations
+      and time differencing methods, Monte Carlo transport,
+      sensitivity/uncertainty analysis, multiphysics methods, transport-depletion coupling
+      methods, high-performance simulations applied to problems in enrichment
+      science, hydrodynamics, software engineering, object-oriented
+      programming, programming for massively-parallel systems,
+      especially leadership-class computing, and programming for
+      heterogeneous architectures, including GPUs.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \ressubheading{University of Michigan}{Ann Arbor,
+    MI}{Ph.D. Nuclear Engineering and Radiological Sciences and
+    Scientific Computing}{2004 - 2009}
+  \vspace*{0.5\baselineskip}
+  
+	Time-Dependent Radiation Transport using
+    the Staggered-Block Jacobi Method
+    \vspace*{\baselineskip}
+      
+  \ressubheading{Oregon State University}{Corvallis, OR}{M.S. Nuclear
+    Engineering}{2002 - 2004}
+  \vspace*{0.5\baselineskip}
+  
+	  Finite Element Transport using Wachspress
+        Rational Basis Functions on Quadrilaterals in Diffusive
+        Regions
+        \vspace*{\baselineskip}
+
+  \ressubheading{Oregon State University}{Corvallis, OR}{Honor's
+    B.S. Nuclear Engineering}{1998 - 2002}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Work Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \olressubheading{Oak Ridge National Laboratory}{2009 - Present}\\
+  \textit{Senior research and development staff member}
+
+  Current research efforts include research and development of
+  high-performance Monte
+  Carlo and hybrid deterministic radiation transport methods within
+  the Exnihilo radiation transport suite, and integrated modeling task lead within the
+  Advanced Simulation Initiatives in Nonproliferation Applications
+  program, as well as ORNL team lead for the simulation of critical
+  used nuclear fuel canisters within geological repositories.
+  Previous research efforts include working on the VERA development team for
+  the Consortium for the Advanced Simulation of Light Water Reactors
+  (CASL), and as a developer for the SCALE code suite.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Significant Honors and Awards}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item R\&D100 Award for the Virtual Environment for Reactor
+  Applications (VERA) reactor simulator code.
+\item 2014 ORNL Engineering Research and Development team award
+\item HPC Innovation Excellence Award
+\item 2010 ORNL Engineering Research and Development team award
+\item D.O.E. Computational Science Graduate Fellowship Award
+\end{itemize}  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Significant Publications}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}
+  \item Elliott Biondo, Gregory Davidson, and Brian Ade, ``Layered CAD/CSG 
+    Geometries for Spatially Complex Radiation Transport Scenarios'', Ann. Nucl. 
+    Eng., \textbf{181}, (2022), https://doi.org/10.1016/j.anucene.2022.109569.
+  \item Mathew W. Swinney, Santosh Bhatt, Gregory G. Davidson, Michael Nole, and
+    Kaushik Banerjee, ``Multiphysics Modeling of a Critical Dual-Purpose
+    Canister in a Saturated Geological Repository,'' Ann. Nucl. Eng., 
+    \textbf{175}, (2022), https://doi.org/10.1016/j.anucene.2022.109204.  
+  \item Evan S. Gonzalez and Gregory G. Davidson, ``Choosing Transport
+    Events for Initiating Splitting and Rouletting,'' Journal of
+    Nuclear Engineering, \textbf{2}, 97--104 (2021),
+    https://doi.org/10.3390/jne2020010.
+  \item Cihangir Celik, Douglas E. Peplow, Gregory G. Davidson, and
+    Mathew R. Swinney, ``A Directional Detector Response Function for
+    Anisotropic Detectors,'' Nucl. Sci. Eng., \textbf{193}(12),
+    1355-1370 (2019) https://doi.org/10.1080/00295639.2019.1631028.
+  \item Elliott D. Biondo, Thomas M. Evans, Gregory G. Davidson, and
+    Steven P. Hamilton, ``Singular Value Decomposition of Adjoint Flux
+    Distributions for Monte Carlo Variance Reduction,''
+    Ann. Nucl. Energy, \textbf{141} (2020)
+    https://doi.org/10.1080/00295450.2019.1625663. 
+  \item Gregory G. Davidson, Tara M. Pandya, Seth R. Johnson, Thomas
+    M. Evans, Aarno E. Isotalo, Cole A Gentry, and William
+    A. Wieselquist, ``Nuclide Depletion Capabilities in the Shift Monte
+    Carlo Code,'' Ann. Nucl. Energy, \textbf{114}, 259-276 (2018)
+    https://doi.org/10.1016/j.anucene.2017.11.042.
+  \item Lei Jin, Kaushik Banerjee, Steven P. Hamilton, and Gregory
+    G. Davidson, ``Improving Variance Estimation in Monte Carlo
+    Eigenvalue Simulations,'' Ann. Nucl. Energy, \textbf{110}, 692-708
+    (2017). 
+  \item Aarno E. Isotalo, Gregory G. Davidson, Tara M. Pandya, William
+    A. Wieselquist, and Seth R. Johnson, ``Flux Renormalization in
+    Constant Power Burnup Calculations,'' Ann. Nucl. Energy,
+    \textbf{96}, 148-157 (2016)
+    https://doi.org/10.1016/j.anucene.2017.07.016.
+  \item Steven P. Hamilton, Thomas M. Evans, Gregory G. Davidson, Seth
+    R. Johnson, Tara M. Pandya, and Andrew T. Godfrey, ``Hot Zero
+    Power Reactor Calculations Using the Insilico Code,''
+    J. Comp. Phys., \textbf{314}, 700-711 (2016)
+    https://doi.org/10.1016/j.jcp.2016.03.033.
+  \item Tara M. Pandya, Seth R. Johnson, Thomas M. Evans, Gregory
+    G. Davidson, Steven P. Hamilton, and Andrew T. Godfrey,
+    ``Implementation, Capabilities, and Benchmarking of Shift, a
+    Massively Parallel Monte Carlo Radiation Transport Code,''
+    J. Comp. Phys., \textbf{308}, 239-272 (2016)
+    https://doi.org/10.1016/j.jcp.2015.12.037.
+  \item Gregory G. Davidson, Thomas M. Evans, Joshua J. Jarrell,
+    Steven P. Hamilton, Tara M. Pandya, and Rachel N. Slaybaugh, ``Massively
+    Parallel, Three-Dimensional Transport Solutions for the
+    k-Eigenvalue Problem,'' Nucl. Sci. Eng. \textbf{177}, 111-125
+    (2014) https://doi.org/10.13182/NSE12-101.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
